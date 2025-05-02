@@ -5,110 +5,121 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TextTally - Error</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 20px;
       background-color: #f8f9fa;
       color: #333;
-      padding: 20px;
       width: 350px;
     }
     
-    .error-container {
+    .container {
       background-color: white;
-      border: 1px solid #e0e0e0;
-      border-radius: 8px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       padding: 20px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      text-align: center;
     }
     
-    .error-header {
+    .header {
       display: flex;
       align-items: center;
+      justify-content: center;
       margin-bottom: 20px;
     }
     
-    .error-icon {
-      color: #FF6B6B;
-      font-size: 24px;
+    .logo {
+      width: 32px;
+      height: 32px;
       margin-right: 10px;
     }
     
     h1 {
-      font-size: 18px;
+      margin: 0;
+      font-size: 20px;
+      color: #00CEC9;
+    }
+    
+    .error-icon {
+      font-size: 48px;
+      margin: 10px 0;
       color: #FF6B6B;
     }
     
-    .error-content {
-      margin-bottom: 20px;
-    }
-    
     p {
-      font-size: 14px;
-      line-height: 1.5;
+      line-height: 1.6;
       margin-bottom: 15px;
     }
     
-    .solution-list {
-      margin-left: 20px;
-      margin-bottom: 15px;
-    }
-    
-    .solution-list li {
-      margin-bottom: 8px;
-      font-size: 14px;
-    }
-    
-    .support-link {
-      display: inline-block;
-      color: #00CEC9;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    
-    .support-link:hover {
-      text-decoration: underline;
-    }
-    
-    .footer {
-      font-size: 12px;
-      color: #888;
-      text-align: center;
+    .tips {
+      text-align: left;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      padding: 15px;
       margin-top: 15px;
+    }
+    
+    .tips h3 {
+      margin-top: 0;
+      font-size: 16px;
+    }
+    
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    
+    li {
+      margin-bottom: 8px;
+    }
+    
+    .button {
+      background-color: #00CEC9;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 8px 16px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      margin-top: 15px;
+    }
+    
+    .button:hover {
+      background-color: #00A8A3;
     }
   </style>
 </head>
 <body>
-  <div class="error-container">
-    <div class="error-header">
-      <div class="error-icon">⚠️</div>
-      <h1>Analysis Error</h1>
+  <div class="container">
+    <div class="header">
+      <img src="../assets/icon48.png" alt="TextTally Logo" class="logo">
+      <h1>TextTally</h1>
     </div>
     
-    <div class="error-content">
-      <p>TextTally couldn't analyze text on this page due to site restrictions.</p>
-      
-      <p>Try these solutions:</p>
-      
-      <ul class="solution-list">
-        <li>Refresh the page and try again</li>
-        <li>Try analyzing text on a different website</li>
-        <li>Make sure you've selected some text before right-clicking</li>
+    <div class="error-icon">⚠️</div>
+    
+    <h2>Unable to Analyze Text</h2>
+    
+    <p>TextTally couldn't analyze the selected text on this website due to security restrictions.</p>
+    
+    <div class="tips">
+      <h3>Try these alternatives:</h3>
+      <ul>
+        <li>Copy the text and paste it into a new tab or document before analyzing</li>
+        <li>Try selecting a smaller portion of text</li>
+        <li>Use TextTally on a different website</li>
       </ul>
-      
-      <p>Some websites with strict security settings may prevent TextTally from functioning correctly.</p>
     </div>
     
-    <a href="https://github.com/yniijia/texttally/issues" class="support-link" target="_blank">Report this issue →</a>
+    <button class="button" id="closeButton">Close</button>
   </div>
   
-  <div class="footer">
-    TextTally v1.0.0
-  </div>
+  <script>
+    document.getElementById('closeButton').addEventListener('click', () => {
+      window.close();
+    });
+  </script>
 </body>
 </html>

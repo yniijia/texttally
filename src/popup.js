@@ -1,20 +1,24 @@
 // TextTally Popup Script
 
 document.addEventListener('DOMContentLoaded', function() {
-  console.log('TextTally popup loaded');
-  
-  // Check if we have stats stored from text analysis
+  // Check if there are any stored stats to display
   chrome.storage.local.get(['textStats'], function(result) {
     if (result.textStats) {
-      console.log('Found stored text stats:', result.textStats);
-      // Could show stats in the popup if desired
-    } else {
-      console.log('No text stats found in storage');
-      // This is the initial popup state where we show instructions
+      // If there are stats, we could display them here
+      // For now, we're just showing the instructions
     }
   });
   
-  // Add any popup interactivity here
-  // For the basic implementation, this popup just shows instructions
-  // Future versions could include settings or history
+  // Add animation to the features list
+  const features = document.querySelectorAll('.features li');
+  features.forEach((feature, index) => {
+    feature.style.opacity = '0';
+    feature.style.transform = 'translateY(10px)';
+    feature.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+    
+    setTimeout(() => {
+      feature.style.opacity = '1';
+      feature.style.transform = 'translateY(0)';
+    }, 100 + (index * 100));
+  });
 });
