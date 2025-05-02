@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TextTally - Error</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      padding: 20px;
+      width: 350px;
+    }
+    
+    .error-container {
+      background-color: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    
+    .error-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .error-icon {
+      color: #FF6B6B;
+      font-size: 24px;
+      margin-right: 10px;
+    }
+    
+    h1 {
+      font-size: 18px;
+      color: #FF6B6B;
+    }
+    
+    .error-content {
+      margin-bottom: 20px;
+    }
+    
+    p {
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+    
+    .solution-list {
+      margin-left: 20px;
+      margin-bottom: 15px;
+    }
+    
+    .solution-list li {
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+    
+    .support-link {
+      display: inline-block;
+      color: #00CEC9;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .support-link:hover {
+      text-decoration: underline;
+    }
+    
+    .footer {
+      font-size: 12px;
+      color: #888;
+      text-align: center;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="error-container">
+    <div class="error-header">
+      <div class="error-icon">⚠️</div>
+      <h1>Analysis Error</h1>
+    </div>
+    
+    <div class="error-content">
+      <p>TextTally couldn't analyze text on this page due to site restrictions.</p>
+      
+      <p>Try these solutions:</p>
+      
+      <ul class="solution-list">
+        <li>Refresh the page and try again</li>
+        <li>Try analyzing text on a different website</li>
+        <li>Make sure you've selected some text before right-clicking</li>
+      </ul>
+      
+      <p>Some websites with strict security settings may prevent TextTally from functioning correctly.</p>
+    </div>
+    
+    <a href="https://github.com/yniijia/texttally/issues" class="support-link" target="_blank">Report this issue →</a>
+  </div>
+  
+  <div class="footer">
+    TextTally v1.0.0
+  </div>
+</body>
+</html>
