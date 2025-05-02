@@ -1,0 +1,40 @@
+# OS specific files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDE and editor files
+.idea/
+.vscode/
+*.sublime-*
+*.swp
+*.swo
+
+# Node modules and logs (if used)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build files and directories
+dist/
+build/
+*.zip
+
+# Environment files
+.env
+.env.local
+
+# Debug files
+*.log
+
+# Temporary files
+tmp/
+temp/
+
+# Testing files
+coverage/
+.nyc_output/
+
+# AI assistant files
+.specstory/
