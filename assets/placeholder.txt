@@ -1,0 +1,1 @@
+This directory contains the TextTally icon and mascot images.
