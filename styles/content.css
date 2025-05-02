@@ -1,0 +1,259 @@
+/* TextTally Content Styles */
+
+:root {
+  --teal: #00CEC9;
+  --light-teal: #81ecec;
+  --coral: #FF6B6B;
+  --light-coral: #fab1a0;
+  --dark-text: #2d3436;
+  --medium-text: #636e72;
+  --light-text: #b2bec3;
+  --white: #ffffff;
+  --light-gray: #f5f5f5;
+  --medium-gray: #dfe6e9;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --popup-width: 380px;
+  --border-radius: 6px;
+  --transition: all 0.2s ease;
+}
+
+/* Popup Container */
+.texttally-popup {
+  position: fixed;
+  width: var(--popup-width);
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  z-index: 2147483647; /* Maximum z-index */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+  transition: var(--transition);
+  opacity: 1;
+  transform: scale(1);
+  border: 1px solid var(--medium-gray);
+}
+
+/* Header */
+.texttally-popup-header {
+  background: linear-gradient(135deg, var(--teal) 0%, var(--light-teal) 100%);
+  padding: 12px 15px;
+  color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+
+.texttally-popup-title {
+  display: flex;
+  align-items: center;
+}
+
+.texttally-popup-title img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.texttally-popup-title h2 {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.texttally-close-button {
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+  transition: var(--transition);
+}
+
+.texttally-close-button:hover {
+  opacity: 1;
+}
+
+/* Content */
+.texttally-popup-content {
+  padding: 15px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.texttally-section {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--medium-gray);
+}
+
+.texttally-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.texttally-section h3 {
+  font-size: 14px;
+  color: var(--teal);
+  margin: 0 0 10px 0;
+  font-weight: 600;
+}
+
+/* Basic Stats Grid */
+.texttally-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.texttally-stat-item {
+  background-color: var(--light-gray);
+  border-radius: 4px;
+  padding: 10px;
+  text-align: center;
+}
+
+.texttally-stat-value {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--teal);
+  margin-bottom: 5px;
+}
+
+.texttally-stat-label {
+  font-size: 12px;
+  color: var(--medium-text);
+}
+
+/* Readability Score */
+.texttally-readability-score {
+  margin-top: 5px;
+}
+
+.texttally-score-label {
+  font-size: 14px;
+  color: var(--dark-text);
+  margin-bottom: 5px;
+}
+
+.texttally-score-grade {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--teal);
+  margin-bottom: 8px;
+}
+
+.texttally-progress-container {
+  height: 8px;
+  background-color: var(--light-gray);
+  border-radius: 4px;
+  margin-bottom: 5px;
+  overflow: hidden;
+}
+
+.texttally-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--coral) 0%, var(--teal) 100%);
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.texttally-scale-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--medium-text);
+}
+
+/* Long Sentences Section */
+.texttally-long-sentences {
+  background-color: rgba(255, 107, 107, 0.1);
+  border-radius: var(--border-radius);
+  padding: 12px;
+  border-left: 3px solid var(--coral);
+}
+
+.texttally-long-sentence-message {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: var(--dark-text);
+}
+
+.texttally-alert-icon {
+  margin-right: 8px;
+}
+
+.texttally-long-sentence-example {
+  font-size: 13px;
+  color: var(--medium-text);
+  line-height: 1.4;
+}
+
+/* Keyword Cloud */
+.texttally-keyword-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 5px 0;
+}
+
+.texttally-keyword {
+  background: linear-gradient(135deg, var(--teal) 0%, var(--light-teal) 100%);
+  color: var(--white);
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.texttally-keyword:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 206, 201, 0.3);
+}
+
+/* Export Footer */
+.texttally-export-footer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.texttally-export-button {
+  background-color: var(--white);
+  border: 1px solid var(--teal);
+  color: var(--teal);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.texttally-export-button:hover {
+  background-color: var(--teal);
+  color: var(--white);
+}
+
+/* Animation for popup */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
