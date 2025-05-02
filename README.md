@@ -73,4 +73,4 @@ MIT License
 
 - **Developer**: Tony Fiston ([@yniijia](https://github.com/yniijia))
 - Mascot: Buzz the Hummingbird
-- Colors: Teal (#00CEC9) + Coral (#FF6B6B) 
+- Colors: Teal (#00CEC9) + Coral (#FF6B6B)

@@ -1,14 +1,17 @@
-# Copyright Notice
+# Copyright and Attribution
 
-© 2025 Tony Fiston (@yniijia). All rights reserved.
+## TextTally Browser Extension
 
-TextTally is a browser extension developed by Tony Fiston.
+Copyright (c) 2025 Tony Fiston
 
 ## Repository
+
 https://github.com/yniijia/texttally
 
-## License
+## Licensing
+
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Attribution
-When using or referencing this software, please provide attribution to Tony Fiston and include a link to the GitHub repository.
+
+When using or modifying this software, please maintain proper attribution to the original author.
