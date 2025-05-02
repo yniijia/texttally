@@ -21,4 +21,4 @@ document.addEventListener('DOMContentLoaded', function() {
       feature.style.transform = 'translateY(0)';
     }, 100 + (index * 100));
   });
-});
+}); 

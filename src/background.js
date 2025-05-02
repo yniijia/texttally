@@ -189,7 +189,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         sourceUrl = sourceMatch[1];
       }
     } else if (type === "text/csv") {
-      const sourceMatch = content.match(/Metadata,Source,"(.*?)"/); 
+      const sourceMatch = content.match(/Metadata,Source,"(.*?)"/);
       if (sourceMatch && sourceMatch[1]) {
         sourceUrl = sourceMatch[1];
       }
@@ -300,4 +300,4 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     sendResponse({ success: true });
     return true;
   }
-});
+}); 
