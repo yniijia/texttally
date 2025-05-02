@@ -1,0 +1,52 @@
+{
+  "manifest_version": 3,
+  "name": "TextTally",
+  "version": "1.0.0",
+  "description": "Count smarter, write better. Analyze text with word counts, readability scores, and keyword insights.",
+  "author": "Tony Fiston",
+  "homepage_url": "https://github.com/yniijia/texttally",
+  "icons": {
+    "16": "assets/icon16.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  },
+  "action": {
+    "default_popup": "src/popup.html",
+    "default_icon": {
+      "16": "assets/icon16.png",
+      "48": "assets/icon48.png",
+      "128": "assets/icon128.png"
+    }
+  },
+  "permissions": [
+    "contextMenus",
+    "storage",
+    "clipboard-write",
+    "tabs",
+    "scripting",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "data:*",
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "src/background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content.js"],
+      "css": ["styles/content.css"],
+      "run_at": "document_end",
+      "all_frames": false
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/buzz.png", "assets/icon16.png", "assets/icon48.png", "assets/icon128.png"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
