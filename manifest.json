@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "TextTally",
-  "version": "1.0.0",
+  "version": "2.05.25",
   "description": "Count smarter, write better. Analyze text with word counts, readability scores, and keyword insights.",
   "author": "Tony Fiston",
   "homepage_url": "https://github.com/yniijia/texttally",
