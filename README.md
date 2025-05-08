@@ -1,21 +1,21 @@
-# TextTally
+# ✨ TextTally
 
 ![TextTally Logo](assets/icon128.png)
 
-> Count smarter, write better
+> 📝 Count smarter, write better
 
 TextTally is a browser extension that provides instant text analysis when you need it. Highlight any text, right-click, and get comprehensive statistics to improve your writing.
 
-## Features
+## ✅ Features
 
-- **Word Count**: Total number of words in selected text
-- **Character Count**: Both with and without spaces
-- **Reading Time**: Estimated time to read at average speed
-- **Keyword Analysis**: See your most frequently used words
-- **Readability Score**: Flesch-Kincaid grade level assessment
-- **Long Sentence Alerts**: Identifies overly long sentences
+- **📊 Word Count**: Total number of words in selected text
+- **🔤 Character Count**: Both with and without spaces
+- **⏱️ Reading Time**: Estimated time to read at average speed
+- **🔑 Keyword Analysis**: See your most frequently used words
+- **📚 Readability Score**: Flesch-Kincaid grade level assessment
+- **⚠️ Long Sentence Alerts**: Identifies overly long sentences
 
-## Installation
+## 💻 Installation
 
 ### Chrome
 
@@ -33,21 +33,21 @@ TextTally is a browser extension that provides instant text analysis when you ne
 4. Select any file in the TextTally folder
 5. The extension is now installed and ready to use
 
-## How to Use
+## 🚀 How to Use
 
 1. Select any text on a webpage
 2. Right-click on the selected text
 3. Click "Analyze with TextTally" from the context menu
 4. View your text statistics in the popup window
 
-## Privacy
+## 🔒 Privacy
 
 TextTally respects your privacy:
 - All text analysis is performed locally in your browser
 - No data is sent to external servers
 - No tracking or analytics
 
-## Development
+## 🛠️ Development
 
 ### Project Structure
 
@@ -65,12 +65,12 @@ TextTally respects your privacy:
 2. Make your changes
 3. Load the extension in developer mode as described in the installation section
 
-## License
+## 📜 License
 
 MIT License
 
-## Credits
+## 👏 Credits
 
-- **Developer**: Tony Fiston ([@yniijia](https://github.com/yniijia))
-- Mascot: Buzz the Hummingbird
-- Colors: Teal (#00CEC9) + Coral (#FF6B6B)
+- **👨‍💻 Developer**: Tony Fiston ([@yniijia](https://github.com/yniijia))
+- 🐦 Mascot: Buzz the Hummingbird
+- 🎨 Colors: Teal (#00CEC9) + Coral (#FF6B6B)
