@@ -1,4 +1,30 @@
-/* TextTally Content Styles */
+/* TextTally Premium Content Styles */
+
+:root {
+  --primary: #00CEC9;
+  --primary-dark: #00a4a0;
+  --secondary: #FF6B6B;
+  --secondary-light: #ffb5b5;
+  --text-primary: #2D3436;
+  --text-secondary: #636E72;
+  --background: #FFFFFF;
+  --surface: #F8FAFB;
+  --border: #E5EDF2;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+}
 
 /* Reset and base styles to prevent interference from page styles */
 .text-tally-popup,
@@ -8,7 +34,7 @@
   box-sizing: border-box;
   line-height: normal;
   text-align: left;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -21,19 +47,19 @@
   top: 20px;
   right: 20px;
   transform: scale(0.95);
-  width: 350px;
+  width: 380px;
   max-width: 90vw;
   max-height: 80vh;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  background-color: var(--background);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   z-index: 2147483647; /* Maximum z-index value */
   opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  transition: opacity var(--transition-normal), transform var(--transition-normal);
+  font-family: var(--font-sans);
   color-scheme: light;
   resize: both;
 }
@@ -49,7 +75,7 @@
   cursor: move !important;
   user-select: none;
   transition: none !important; /* Disable transitions while dragging */
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2); /* Stronger shadow when dragging */
+  box-shadow: var(--shadow-lg); /* Stronger shadow when dragging */
 }
 
 /* Header */
@@ -57,57 +83,74 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 20px;
-  background-color: #ffffff;
-  color: #000000;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: linear-gradient(120deg, var(--primary), var(--primary-dark));
+  color: white;
   cursor: move;
   user-select: none;
-  border-bottom: 1px solid #e9ecef;
+  position: relative;
+  overflow: hidden;
+}
+
+.text-tally-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('../assets/pattern.svg');
+  background-size: 600px;
+  opacity: 0.12;
+  pointer-events: none;
 }
 
 .text-tally-title-container {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--spacing-sm);
 }
 
 .text-tally-logo {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   object-fit: contain;
   border-radius: 50%;
-  background-color: #ffffff;
+  background-color: white;
   padding: 2px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 .text-tally-header h2 {
   margin: 0;
   padding: 0;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
-  color: #000000;
-  letter-spacing: 0.2px;
+  color: white;
+  letter-spacing: -0.3px;
 }
 
 /* Close button */
 .text-tally-close-btn {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.05);
-  color: #000000;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
   border: none;
   border-radius: 50%;
   font-size: 18px;
   cursor: pointer;
-  transition: background-color 0.2s, transform 0.2s;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
   outline: none;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 
 .text-tally-close-btn:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.3);
   transform: scale(1.05);
 }
 
@@ -119,14 +162,14 @@
 .text-tally-content {
   flex: 1;
   overflow-y: auto;
-  padding: 20px;
-  background-color: #ffffff;
+  padding: var(--spacing-lg);
+  background-color: var(--background);
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--spacing-lg);
   max-height: calc(80vh - 60px);
   scrollbar-width: thin;
-  scrollbar-color: #d1d1d1 #f5f5f5;
+  scrollbar-color: rgba(0, 0, 0, 0.1) var(--surface);
 }
 
 /* Custom scrollbar */
@@ -135,37 +178,49 @@
 }
 
 .text-tally-content::-webkit-scrollbar-track {
-  background: #f5f5f5;
+  background: var(--surface);
   border-radius: 3px;
 }
 
 .text-tally-content::-webkit-scrollbar-thumb {
-  background-color: #d1d1d1;
+  background-color: rgba(0, 0, 0, 0.1);
   border-radius: 3px;
 }
 
 .text-tally-content::-webkit-scrollbar-thumb:hover {
-  background-color: #aaaaaa;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 /* Sections */
 .text-tally-section {
-  margin-bottom: 20px;
+  margin-bottom: var(--spacing-lg);
   position: relative;
+  animation: fadeIn 0.5s ease-out;
+  animation-fill-mode: both;
 }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.text-tally-section:nth-child(1) { animation-delay: 0.1s; }
+.text-tally-section:nth-child(2) { animation-delay: 0.2s; }
+.text-tally-section:nth-child(3) { animation-delay: 0.3s; }
+.text-tally-section:nth-child(4) { animation-delay: 0.4s; }
+.text-tally-section:nth-child(5) { animation-delay: 0.5s; }
 
 .text-tally-section:last-child {
   margin-bottom: 0;
 }
 
 .text-tally-section h3 {
-  margin: 0 0 16px 0;
+  margin: 0 0 var(--spacing-md) 0;
   padding: 0;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
-  color: #202124;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
   position: relative;
   display: inline-block;
 }
@@ -173,11 +228,11 @@
 .text-tally-section h3::after {
   content: '';
   position: absolute;
-  bottom: -6px;
+  bottom: -4px;
   left: 0;
-  width: 24px;
+  width: 30px;
   height: 2px;
-  background-color: #4285F4;
+  background-color: var(--primary);
   border-radius: 1px;
 }
 
@@ -185,215 +240,216 @@
 .text-tally-source-section {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-bottom: 20px;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background-color: var(--surface);
+  border-radius: var(--radius-md);
 }
 
 .text-tally-source {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--spacing-sm);
   font-size: 13px;
 }
 
 .text-tally-source-label {
   font-weight: 600;
-  color: #5f6368;
+  color: var(--text-primary);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .text-tally-source-url {
-  color: #1a73e8;
+  color: var(--primary);
   text-decoration: none;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 230px;
-  transition: color 0.2s;
+  max-width: 100%;
+  transition: color var(--transition-fast);
+  font-size: 13px;
 }
 
 .text-tally-source-url:hover {
-  color: #174ea6;
+  color: var(--primary-dark);
   text-decoration: underline;
 }
 
-/* Stats Grid */
+/* Stats grid */
 .text-tally-stats-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  margin-bottom: 20px;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
 }
 
 .text-tally-stat {
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  padding: 12px;
+  background-color: var(--surface);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.2s, box-shadow 0.2s;
-  user-select: none;
+  gap: var(--spacing-xs);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  border: 1px solid transparent;
 }
 
 .text-tally-stat:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  background-color: #f5f5f5;
+  box-shadow: var(--shadow-sm);
+  border-color: var(--border);
 }
 
 .text-tally-stat-value {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 700;
-  color: #202124;
-  margin-bottom: 4px;
+  color: var(--primary);
+  margin: 0;
   line-height: 1.2;
-  text-align: center;
+  letter-spacing: -0.5px;
 }
 
 .text-tally-stat-label {
   font-size: 13px;
-  color: #5f6368;
-  text-align: center;
+  color: var(--text-secondary);
+  margin: 0;
   line-height: 1.2;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 /* Readability section */
 .text-tally-readability {
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  padding: 16px;
-  margin-bottom: 20px;
-  transition: transform 0.2s, box-shadow 0.2s;
-  user-select: none;
+  background-color: var(--surface);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  border: 1px solid transparent;
 }
 
 .text-tally-readability:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-sm);
+  border-color: var(--border);
 }
 
 .text-tally-progress-container {
-  width: 100%;
-  height: 12px;
-  background-color: #e8eaed;
-  border-radius: 6px;
-  margin: 16px 0;
+  height: 8px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  margin: 12px 0 8px 0;
   overflow: hidden;
   position: relative;
 }
 
 .text-tally-progress-bar {
   height: 100%;
-  background: linear-gradient(90deg, #F44336, #FF9800, #FFEB3B, #4CAF50);
-  border-radius: 6px;
-  transition: width 1s cubic-bezier(0.65, 0, 0.35, 1);
-  position: relative;
-  width: 0%;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to right, 
+    var(--secondary) 0%, 
+    var(--secondary-light) 50%, 
+    var(--primary) 100%
+  );
+  border-radius: 4px;
+  transition: width 0.5s ease-out;
 }
 
+/* Difficulty scale labels */
 .text-tally-difficulty-scale {
   display: flex;
   justify-content: space-between;
-  font-size: 11px;
-  color: #5f6368;
-  margin-top: 6px;
-  padding: 0 2px;
+  margin-top: var(--spacing-xs);
+  font-size: 12px;
+  color: var(--text-secondary);
+  background: none;
   font-weight: 500;
 }
 
 .text-tally-difficulty-scale span {
-  white-space: nowrap;
-  transform: translateX(-50%);
   position: relative;
-  font-size: 10px;
+  text-align: center;
+  background: none;
 }
 
+/* Readability level display */
 .text-tally-readability-label {
-  font-size: 16px;
-  font-weight: 600;
-  color: #202124;
-  text-align: center;
-  margin-top: 16px;
-  line-height: 1.4;
+  font-size: 14px;
+  color: var(--text-primary);
+  margin: var(--spacing-md) 0 0 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  background: none;
+  font-weight: 500;
 }
 
 /* Warnings section */
 .text-tally-warnings {
-  margin-top: 20px;
-  background-color: #FFF4E5;
-  border-left: 4px solid #FF9800;
-  border-radius: 4px;
-  padding: 12px;
-  font-size: 14px;
-  color: #5f6368;
-  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-sm);
+  background-color: #FFF8F0;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  border: 1px solid #FFEFD0;
 }
 
 .text-tally-warning {
   display: flex;
-  align-items: flex-start;
-  margin-bottom: 12px;
-  padding-bottom: 12px;
-  border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+  gap: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .text-tally-warning:last-child {
-  margin-bottom: 0;
-  padding-bottom: 0;
   border-bottom: none;
+  padding-bottom: 0;
 }
 
 .text-tally-warning-icon {
+  color: var(--secondary);
+  font-size: 16px;
   flex-shrink: 0;
-  margin-right: 10px;
-  margin-top: 2px;
 }
 
 .text-tally-warning-text {
   flex: 1;
   font-size: 13px;
   line-height: 1.5;
-  color: #3c4043;
-}
-
-.text-tally-warning-text span {
-  font-style: italic;
+  color: var(--text-primary);
+  background: none;
+  padding: 0;
 }
 
 /* Export section */
 .text-tally-export-section {
-  margin-top: 20px;
-  border-top: 1px solid #e9ecef;
-  padding-top: 20px;
+  margin-top: var(--spacing-sm);
+  padding-top: var(--spacing-sm);
 }
 
 .text-tally-export-buttons {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
 }
 
 .text-tally-export-btn {
-  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f8f9fa;
-  border: 1px solid #e9ecef;
-  border-radius: 8px;
-  padding: 12px;
+  justify-content: center;
+  padding: var(--spacing-md) var(--spacing-sm);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
   cursor: pointer;
-  transition: background-color 0.2s, transform 0.2s;
+  transition: all var(--transition-fast);
+  color: var(--text-primary);
   position: relative;
   overflow: hidden;
-  outline: none;
 }
 
 .text-tally-export-btn::before {
@@ -403,17 +459,16 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: currentColor;
+  background-color: var(--primary);
   opacity: 0;
-  transition: opacity 0.2s;
+  transition: opacity var(--transition-fast);
   z-index: 0;
 }
 
 .text-tally-export-btn:hover {
-  background-color: #f1f3f4;
   transform: translateY(-2px);
-  border-color: #dadce0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-sm);
+  border-color: var(--primary);
 }
 
 .text-tally-export-btn:hover::before {
@@ -425,60 +480,56 @@
 }
 
 .text-tally-export-icon {
-  font-size: 20px;
-  margin-bottom: 8px;
-  color: #5f6368;
+  font-size: 18px;
+  margin-bottom: var(--spacing-xs);
   position: relative;
   z-index: 1;
+  color: var(--primary);
 }
 
 .text-tally-export-label {
   font-size: 12px;
-  color: #202124;
   font-weight: 500;
-  text-align: center;
   position: relative;
   z-index: 1;
+  color: var(--text-secondary);
 }
 
 /* Keyword cloud */
 .text-tally-keyword-cloud {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 12px;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
 }
 
 .text-tally-keyword {
-  background-color: #f1f3f4;
-  border-radius: 16px;
-  padding: 6px 12px;
-  font-size: 13px;
-  color: #202124;
   display: inline-flex;
   align-items: center;
-  transition: background-color 0.2s, transform 0.2s;
-  user-select: none;
-  cursor: default;
+  padding: var(--spacing-xs) var(--spacing-md);
+  background-color: #E0F7F6;
+  color: var(--text-primary);
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .text-tally-keyword:hover {
-  background-color: #e8eaed;
   transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+  background-color: #C5F1EF;
 }
 
 .text-tally-keyword-count {
-  background-color: #4285F4;
-  color: white;
-  border-radius: 50%;
-  width: 18px;
-  height: 18px;
-  font-size: 10px;
+  background-color: var(--primary);
+  border-radius: 100px;
+  padding: 2px 8px;
+  margin-left: var(--spacing-sm);
+  font-size: 12px;
   font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 6px;
+  color: white;
+  display: inline-block;
 }
 
 /* Notification */
@@ -486,68 +537,74 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #4285F4;
+  background-color: var(--primary);
   color: white;
-  padding: 12px 16px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
   font-size: 14px;
-  z-index: 2147483646;
+  box-shadow: var(--shadow-md);
+  z-index: 2147483647;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--transition-normal), transform var(--transition-normal);
   display: flex;
   align-items: center;
-  transform: translateY(100%);
-  opacity: 0;
-  transition: transform 0.3s ease, opacity 0.3s ease;
   max-width: 300px;
+  border-left: 4px solid var(--primary-dark);
 }
 
 .text-tally-notification.error {
-  background-color: #D93025;
-  color: white;
-  font-weight: 500;
+  background-color: #FFF0F0;
+  color: var(--secondary);
+  border-left-color: var(--secondary);
 }
 
 .text-tally-notification.visible {
-  transform: translateY(0);
   opacity: 1;
+  transform: translateY(0);
 }
 
-/* Backdrop */
+/* Backdrop for popup */
 .text-tally-backdrop {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 2147483646;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 2147483646; /* One less than popup */
   opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
+  visibility: hidden;
+  transition: opacity var(--transition-normal);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 
 .text-tally-backdrop-visible {
   opacity: 1;
-  pointer-events: auto;
+  visibility: visible;
 }
 
 /* Resize handle */
 .text-tally-resize-handle {
   position: absolute;
-  right: 0;
   bottom: 0;
+  right: 0;
   width: 16px;
   height: 16px;
   cursor: nwse-resize;
-  background: transparent;
-  z-index: 2147483647;
+  background: linear-gradient(135deg, transparent 50%, var(--primary) 50%);
+  border-radius: 0 0 4px 0;
+  opacity: 0.3;
+  transition: opacity var(--transition-fast);
 }
 
-/* Additional styles for long text overflow */
+.text-tally-resize-handle:hover {
+  opacity: 0.5;
+}
+
 .text-tally-readability,
-.text-tally-warning-text {
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  word-break: break-word;
-  hyphens: auto;
+.text-tally-readability div,
+.text-tally-readability span {
+  background: none !important;
 }
